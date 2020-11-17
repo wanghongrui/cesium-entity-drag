@@ -1,0 +1,17 @@
+{
+  "name": "cesium-entity-drag",
+  "version": "1.0.0",
+  "description": "Drag entity in cesium",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/wanghongrui/cesium-entity-drag.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wanghongrui/cesium-entity-drag.git"
+  },
+  "keywords": [],
+  "author": "dahong <wanghongruigood@qq.com> (https://dahong.me/)",
+  "license": "MIT"
+}
