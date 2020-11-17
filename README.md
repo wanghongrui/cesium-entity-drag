@@ -1,4 +1,4 @@
-# Drag model in Cesium
+# Drag Entity in Cesium
 
 ## usage
 
