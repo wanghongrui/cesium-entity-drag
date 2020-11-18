@@ -1,17 +1,17 @@
-# Drag model in Cesium
+# Drag entity in Cesium
 
 ## usage
 
 ```javascript
-npm install cesium-model-drag
+npm install cesium-entity-drag
 ```
 
 ```javascript
-import Drag from 'cesium-model-drag'
+import Drag from 'cesium-entity-drag'
 
 const drag = new Drag(window.viewer)
 
-// to drag model
+// start drag
 drag.enable()
 
 // or disable
