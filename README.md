@@ -1,4 +1,4 @@
-# Drag entity in Cesium
+# Drag Entity in Cesium
 
 ## usage
 
