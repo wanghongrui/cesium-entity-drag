@@ -22,7 +22,7 @@ export default class Drag {
     this.handler.setInputAction(this._move, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
   }
 
-  disable() {    
+  disable() {
     this._viewer.scene.screenSpaceCameraController.enableRotate = true
 
     this.handler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOWN)
@@ -48,11 +48,19 @@ export default class Drag {
   }
 
   _moveHandler(e) {
-    if (this.moving && this.entity) {
+    if (this.moving && this.entity && this.entity.id) {
       const ray = this._viewer.camera.getPickRay(e.endPosition)
       const cartesian = this._viewer.scene.globe.pick(ray, this._viewer.scene)
+
+      const ellipsoid = viewer.scene.globe.ellipsoid
+      const c = ellipsoid.cartesianToCartographic(cartesian)
+
+      const origin = this.entity.id.position.getValue()
+
+      const cc = ellipsoid.cartesianToCartographic(origin)
+
       this.entity.id.position = new Cesium.CallbackProperty(function () {
-        return cartesian
+        return new Cesium.Cartesian3.fromRadians(c.longitude, c.latitude, cc.height)
       }, false)
     }
   }
